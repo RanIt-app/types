@@ -1,13 +1,12 @@
 {
   "name": "ranit.types",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "ranit-apps",
   "main": "index.js",
   "repository": "https://github.com/RanIt-app/types.git",
   "author": "Dennis Vash <dennisvash@hey.com>",
   "types": "./lib/main.d.ts",
   "license": "MIT",
-  "private": true,
   "dependencies": {
     "release-it": "^14.5.1",
     "typescript": "^4.2.3"
