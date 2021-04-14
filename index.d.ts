@@ -27,4 +27,17 @@ export declare type Category = {
   updatedAt: string;
 }
 
-export declare type Categories = Array<Category>;
+export declare interface IProduct {
+  condition: string;
+  description: string;
+  id: string;
+  price: number;
+  status: string;
+  title: string;
+}
+
+export declare type Categories = Category[];
+
+export declare interface IPaginatedProducts {
+  items: IProduct[];
+}
