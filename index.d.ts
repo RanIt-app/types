@@ -12,6 +12,8 @@ export declare interface IResponseAuth {
 }
 
 export declare type ProfileId = string;
+export declare type ItemId = string;
+export declare type ProductId = string;
 
 export declare interface IProfile {
   readonly email: string;
@@ -22,6 +24,18 @@ export declare interface IProfile {
   readonly status: string; // TODO: exact
   readonly createdAt: string;
   readonly updatedAt: string;
+}
+
+export declare interface IItem {
+  readonly categories: Categories;
+  readonly condition: string;
+  readonly createdAt: string;
+  readonly description: string;
+  readonly id: ItemId;
+  readonly images: string[];
+  readonly status: string; // TODO: exact
+  readonly updatedAt: string;
+  readonly seller: IProfile;
 }
 
 export declare type Category = {
@@ -35,8 +49,6 @@ export declare type Category = {
 export declare type ServerHealth = {
   readonly status: string;
 }
-
-export declare type ProductId = string;
 
 export declare interface IProduct {
   readonly categories: Categories;
@@ -52,6 +64,7 @@ export declare interface IProduct {
 }
 
 export declare type Categories = Category[];
+
 export declare type PaginationMeta = {
   readonly totalItems: number;
   readonly itemCount: number;
@@ -59,15 +72,22 @@ export declare type PaginationMeta = {
   readonly totalPages: number;
   readonly currentPage: number;
 }
+
 export declare interface IPaginatedProducts {
   readonly items: IProduct[];
   readonly meta: PaginationMeta;
 }
 
+export declare type MyProducts = {
+  readonly items: IItem[];
+  readonly meta: PaginationMeta;
+};
+
 export declare type MyOrders = {
   readonly items: ProductId[];
   readonly meta: PaginationMeta;
 };
+
 export declare type MyOrdersPayload = {
   readonly productId: string;
 };
