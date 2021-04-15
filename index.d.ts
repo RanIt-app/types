@@ -6,8 +6,10 @@ export declare interface IPayloadRegister {
 
 export declare type IPayloadLogin = Omit<IPayloadRegister, `name`>;
 
+export declare type AccessToken = string;
+
 export declare interface IResponseAuth {
-  readonly accessToken: string;
+  readonly accessToken: AccessToken;
   readonly expiresIn: string; // TODO: exact
 }
 
