@@ -1,43 +1,73 @@
 export declare interface IPayloadRegister {
-  email: string | null;
-  name: string | null;
-  password: string | null;
+  readonly email: string | null;
+  readonly name: string | null;
+  readonly password: string | null;
 }
 
 export declare type IPayloadLogin = Omit<IPayloadRegister, `name`>;
 
 export declare interface IResponseAuth {
-  accessToken: string;
-  expiresIn: string;
+  readonly accessToken: string;
+  readonly expiresIn: string; // TODO: exact
 }
 
+export declare type ProfileId = string;
+
 export declare interface IProfile {
-  email: string;
-  id: string;
-  image: string;
-  name: string;
-  role: string;
-  status: string;
+  readonly email: string;
+  readonly id: ProfileId;
+  readonly image: string;
+  readonly name: string;
+  readonly role: string; // TODO: exact
+  readonly status: string; // TODO: exact
+  readonly createdAt: string;
+  readonly updatedAt: string;
 }
 
 export declare type Category = {
-  createdAt: string;
-  description: string;
-  id: string;
-  updatedAt: string;
+  readonly createdAt: string;
+  readonly description: string;
+  readonly id: string;
+  readonly updatedAt: string;
 }
 
+// Exact strings
+export declare type ServerHealth = {
+  readonly status: string;
+}
+
+export declare type ProductId = string;
+
 export declare interface IProduct {
-  condition: string;
-  description: string;
-  id: string;
-  price: number;
-  status: string;
-  title: string;
+  readonly categories: Categories;
+  readonly condition: string;
+  readonly createdAt: string;
+  readonly description: string;
+  readonly id: ProductId;
+  readonly images: string[];
+  readonly price: number;
+  readonly status: string;
+  readonly title: string;
+  readonly updatedAt: string;
 }
 
 export declare type Categories = Category[];
-
-export declare interface IPaginatedProducts {
-  items: IProduct[];
+export declare type PaginationMeta = {
+  readonly totalItems: number;
+  readonly itemCount: number;
+  readonly itemsPerPage: number;
+  readonly totalPages: number;
+  readonly currentPage: number;
 }
+export declare interface IPaginatedProducts {
+  readonly items: IProduct[];
+  readonly meta: PaginationMeta;
+}
+
+export declare type MyOrders = {
+  readonly items: ProductId[];
+  readonly meta: PaginationMeta;
+};
+export declare type MyOrdersPayload = {
+  readonly productId: string;
+};
