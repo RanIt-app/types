@@ -1,9 +1,9 @@
 {
   "name": "ranit.types",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "ranit-apps",
   "main": "index.js",
-  "private": "false",
+  "private": false,
   "repository": "https://github.com/RanIt-app/types.git",
   "author": "Dennis Vash <dennisvash@hey.com>",
   "types": "./main.d.ts",
