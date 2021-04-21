@@ -112,7 +112,9 @@ export declare interface IPayloadRegister {
 
 export declare type IPayloadMyProducts = Pick<
   IProduct,
-  `categories` | `title` | `price` | `description` | `shipping` | `condition`
->;
+  `title` | `price` | `description` | `shipping` | `condition`
+> & {
+  readonly categories: IdCategory[];
+};
 
 export declare type IPayloadLogin = Omit<IPayloadRegister, `name`>;
