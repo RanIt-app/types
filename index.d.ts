@@ -110,4 +110,9 @@ export declare interface IPayloadRegister {
   readonly password: string | null;
 }
 
+export declare type IPayloadMyProducts = Pick<
+  IProduct,
+  `categories` | `title` | `price` | `description` | `shipping` | `condition`
+>;
+
 export declare type IPayloadLogin = Omit<IPayloadRegister, `name`>;
