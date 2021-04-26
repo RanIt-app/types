@@ -1,6 +1,6 @@
 {
   "name": "ranit.types",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "ranit-apps",
   "main": "index.js",
   "private": false,
