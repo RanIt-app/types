@@ -35,6 +35,7 @@ export declare type StatusProduct =
 export declare type StatusOrder = `initiated` | `confirmed` | `canceled`;
 
 export declare interface IUser {
+  readonly address: string;
   readonly createdAt: string;
   readonly email: string;
   readonly id: IdProfile;
@@ -53,6 +54,7 @@ export declare interface IProduct extends TimeCreation {
   readonly description: string;
   readonly id: IdProduct;
   readonly images: string[];
+  readonly likes: number;
   readonly price: number;
   readonly seller: IUser;
   readonly shipping: IShipping;
