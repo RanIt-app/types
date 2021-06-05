@@ -49,7 +49,7 @@ export declare interface IUser {
 export declare type UserProfile = Pick<IUser, `email` | `name` | `image`>;
 
 export declare interface IProduct extends TimeCreation {
-  readonly categories: IdCategory[];
+  readonly categories: ICategory[];
   readonly condition: ConditionProduct;
   readonly description: string;
   readonly id: IdProduct;
